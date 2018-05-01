@@ -2,10 +2,8 @@
 
  require "connexion.php";
 
- $user_name = "sn713708";
- //$_POST["username"];
- $user_password = "polyincidents";
- //$_POST["password"];
+ $user_name = $_POST["username"];
+ $user_password = $_POST["password"];
 
 $mysql_query = " select * from user_table where username like '$user_name' and password like '$user_password' ; ";
 
