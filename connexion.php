@@ -3,7 +3,7 @@ $host="den1.mysql4.gear.host";
 $port=3306;
 $socket="";
 $user="polyincidents";
-$password="Cf10~_e4Lqtw";
+$password="polytech*";
 $dbname="polyincidents";
 
 $connexion = new mysqli($host, $user, $password, $dbname, $port, $socket)
