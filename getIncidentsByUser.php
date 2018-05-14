@@ -4,9 +4,10 @@
 
  $username = $_POST["username"];
 
-mysqli_set_charset($connexion, 'utf8'); 
+mysqli_set_charset($connexion, 'utf8');
 
 //In order to get incidents declared by user only
+
 
 $mysql_query = "SELECT ut.surname, ut.name, inc.title, inc.content, inc.location, inc.date, t.tag, imp.importance, urg.urgence from incident as inc,
   default_tag as t, importance as imp, urgence as urg, user_table as ut WHERE
