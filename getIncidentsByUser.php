@@ -7,21 +7,6 @@
 mysqli_set_charset($connexion, 'utf8'); 
 
 //In order to get incidents declared by user only
-/*
- $username = "sn713708";
-
-$sql1 = "SELECT * from user_table where username like '$username'";
-$result1 = mysqli_query($connexion, $sql2);
-
-if(mysqli_num_rows($result1) > 0){
-	while($row = $result1->fetch_assoc()){
-        $user_id = $row["id_user"];
-   	}
-
-} else {
-	echo "Error: " . $sql2 . "<br>" . $connexion->error;
- }
- */
 
 $mysql_query = "SELECT ut.surname, ut.name, inc.title, inc.content, inc.location, inc.date, t.tag, imp.importance, urg.urgence from incident as inc,
   default_tag as t, importance as imp, urgence as urg, user_table as ut WHERE
