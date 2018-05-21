@@ -8,7 +8,7 @@ mysqli_set_charset($connexion, 'utf8');
 
 //In order to get incidents declared by user only
 
-$mysql_query = "SELECT ut.surname, ut.name, inc.title, inc.content, inc.location, inc.date, t.value as tag, imp.value as importance, urg.value as urgence from incident as inc,
+$mysql_query = "SELECT ut.surname, ut.name, inc.id_incident,  inc.title, inc.content, inc.location, inc.date, t.value as tag, imp.value as importance, urg.value as urgence from incident as inc,
   default_tag as t, importance as imp, urgence as urg, user_table as ut WHERE
       ut.username like '$username' and
     t.id_tag = inc.id_tag and urg.id_urgence = inc.id_urgence and imp.id_importance = inc.id_importance and inc.id_incident
