@@ -2,7 +2,7 @@
 
  require "connexion.php";
 
- $recherche = $_POST["recherche"];
+ $recherche = "title";
 
 mysqli_set_charset($connexion, 'utf8');
 
