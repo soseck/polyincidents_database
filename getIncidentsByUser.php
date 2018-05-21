@@ -13,7 +13,7 @@ $mysql_query = "SELECT ut.surname, ut.name, inc.title, inc.content, inc.location
       ut.username like '$username' and
     t.id_tag = inc.id_tag and urg.id_urgence = inc.id_urgence and imp.id_importance = inc.id_importance and inc.id_incident
 IN (SELECT ia.id_incident from incident_author as ia where ia.id_user IN (SELECT us.id_user from user_table as us
-    WHERE us.username like '$username'));";
+    WHERE us.username like '$username')) ORDER BY inc.date DESC;";
 
 $result = mysqli_query($connexion, $mysql_query);
 $rows = array();
