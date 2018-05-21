@@ -10,7 +10,7 @@ mysqli_set_charset($connexion, 'utf8');
 
 $mysql_query = "SELECT u.surname, u.name, inc.title, inc.content, inc.location, inc.date, t.value, imp.value, urg.value from incident as inc, default_tag as t, importance as imp, urgence as urg, user_table as u WHERE inc.id_tag = t.id_tag and inc.id_importance = imp.id_importance and inc.id_urgence = urg.id_urgence and (u.surname, u.name) IN
 (SELECT us.surname, us.name FROM user_table as us WHERE us.id_user = (SELECT ia.id_user FROM incident_author as ia WHERE ia.id_incident = inc.id_incident)) and
- ( u.surname LIKE '%recherche' || u.name LIKE '%recherche%' || inc.title LIKE '%recherche%' || inc.content LIKE '%recherche%' || inc.location LIKE '%recherche%' || inc.date LIKE '%recherche%' || t.value LIKE '%recherche%'|| imp.value LIKE '%recherche%'|| urg.value LIKE '%recherche%')";
+ ( u.surname LIKE '%$recherche' || u.name LIKE '%$recherche%' || inc.title LIKE '%$recherche%' || inc.content LIKE '%$recherche%' || inc.location LIKE '%$recherche%' || inc.date LIKE '%$recherche%' || t.value LIKE '%$recherche%'|| imp.value LIKE '%$recherche%'|| urg.value LIKE '%$recherche%')";
 
 $result = mysqli_query($connexion, $mysql_query);
 $rows = array();
@@ -24,5 +24,6 @@ if(mysqli_num_rows($result) > 0){
 }else{
 	echo "fail";
  }
+
 
 $connexion->close();
