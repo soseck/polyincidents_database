@@ -1,8 +1,7 @@
 <?php
 
  require "connexion.php";
-
- $recherche = $POST ["searchtext"];
+ $recherche = $_POST["searchtext"];
 
 mysqli_set_charset($connexion, 'utf8');
 
